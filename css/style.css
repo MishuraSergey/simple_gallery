@@ -1,0 +1,287 @@
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+html {
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font: normal 400 18px "Red Hat Display", sans-serif;
+}
+
+header, main, section {
+  display: block;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  line-height: 1;
+}
+
+textarea {
+  overflow: auto;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.clicker:active {
+  transform: translateY(5%);
+}
+
+#app {
+  max-width: 640px;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #325515;
+  min-height: 100vh;
+}
+#app header {
+  max-width: 610px;
+  width: calc(100% - 30px);
+  height: 62px;
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 18px;
+  z-index: 1;
+  color: #fff;
+  background: rgba(100, 171, 43, 0.5);
+  backdrop-filter: blur(34.5394px);
+  border-radius: 5px;
+}
+#app header .logo {
+  position: relative;
+  top: 16px;
+  width: 58px;
+  height: 58px;
+  box-shadow: 0 10px 7.61999px rgba(58, 68, 46, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+  background: url("../assets/logo.svg") no-repeat center center/34px 37px, #FDEE63;
+}
+#app header button i {
+  color: #fff;
+  font-size: 22px;
+}
+#app #posts {
+  margin-top: calc(122px - 12px);
+  position: relative;
+  color: #fff;
+}
+#app #posts .post {
+  border-bottom: 3px solid #FDEE63;
+}
+#app #posts .post:not(:first-of-type) {
+  margin-top: 56px;
+}
+#app #posts .post .post__img {
+  width: 100%;
+  height: 232px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+}
+#app #posts .post .post__img .post__likes {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+}
+#app #posts .post .post__img .post__likes button {
+  width: inherit;
+  height: inherit;
+  border: 3px solid #FDEE63;
+  border-radius: 100%;
+  overflow: hidden;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+#app #posts .post .post__img .post__likes button.liked {
+  background-color: #F26F87;
+  border-color: #F26F87;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+#app #posts .post .post__img .post__likes button i {
+  border-radius: 100%;
+  color: #FDEE63;
+}
+#app #posts .post p {
+  margin-bottom: 16px;
+}
+#app #posts .post p.post__message {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.5em;
+  word-wrap: break-word;
+}
+#app #posts .post p.post__message::first-letter {
+  text-transform: uppercase;
+}
+#app #posts .post p.post__time {
+  font-size: 0.6666666667em;
+  text-transform: uppercase;
+}
+#app #upload {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translate3d(0, 0, 0);
+  width: 100%;
+  max-width: 640px;
+  height: 93px;
+  background: white;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.74) 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#app #upload button {
+  width: 58px;
+  height: 58px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #64AB2B;
+  color: #fff;
+}
+#app #upload button i {
+  font-size: 23px;
+}
+#app #input {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 20px 20px 0 0;
+  padding: 22px 32px;
+  background: #fff;
+  transform: translate(-50%, 100%);
+  transition: transform 0.4s ease-out;
+  z-index: 3;
+}
+#app #input.shown {
+  transform: translate(-50%, 0);
+  transition: transform 0.4s ease-out;
+}
+#app #input .closer {
+  color: #64AB2B;
+  font-size: 1.2222222222em;
+  float: right;
+  line-height: 0;
+  margin-bottom: 12px;
+}
+#app #input form {
+  clear: both;
+}
+#app #input form .form_block {
+  margin-bottom: 16px;
+}
+#app #input form .form_block h2 {
+  font-size: 0.8888888889em;
+  margin-bottom: 16px;
+}
+#app #input form .form_block textarea {
+  border: 1px solid #dcd9e5;
+  width: 100%;
+  border-radius: 5px;
+  padding: 9px 16px;
+  color: #6d6686;
+}
+#app #input form .form_block .input_file_wrap {
+  height: 40px;
+}
+#app #input form .form_block .input_file_wrap.removable {
+  position: relative;
+}
+#app #input form .form_block .input_file_wrap.removable #file_label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 22px;
+  border: none;
+  color: #292043;
+  text-align: left;
+}
+#app #input form .form_block .input_file_wrap.removable #delete_file {
+  display: block;
+}
+#app #input form .form_block .input_file_wrap #file_label {
+  height: inherit;
+  line-height: 40px;
+  color: #64AB2B;
+  width: 100%;
+  border: 1px solid #64AB2B;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.7777777778em;
+  display: inline-block;
+  position: relative;
+}
+#app #input form .form_block .input_file_wrap #delete_file {
+  display: none;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%) translate3d(0, 0, 0);
+  z-index: 9;
+}
+#app #input form .form_block .input_file_wrap #user_file {
+  display: none;
+}
+#app #input form #publish_btn {
+  margin-top: 16px;
+  height: 48px;
+  background-color: #64AB2B;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 0.8888888889em;
+  color: #fff;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+#app #input form #publish_btn:disabled {
+  background-color: #f1f0f6;
+  color: #b8b4c9;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+#app .overlay {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+#app .overlay.shown {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,76 @@
+$defaultFontSize: 18;
+$defaultBorderRadius: 5px;
+$defaultTransition: .2s ease-out;
+$maxWidth: 640px;
+$colorGreen: #64AB2B;
+$colorYellow: #FDEE63;
+
+@function emSize ($s) {
+	@return $s/ $defaultFontSize + em;
+}
+
+@mixin centerAll {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%) +' '+ translate3d(0, 0, 0);
+}
+
+@mixin centerX {
+	left: 50%;
+	transform: translateX(-50%) +' '+ translate3d(0, 0, 0);
+}
+
+@mixin centerY {
+	top: 50%;
+	transform: translateY(-50%) +' '+ translate3d(0, 0, 0);
+}
+
+/*reset*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1;
+}
+
+html {
+	line-height: 1;
+	-webkit-text-size-adjust: 100%
+}
+
+body {
+	font: normal 400 18px 'Red Hat Display', sans-serif;
+}
+
+header, main, section {
+	display: block
+}
+
+button, input, textarea {
+	font-family: inherit;
+	line-height: 1;
+}
+
+textarea {
+	overflow: auto;
+}
+
+button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	text-transform: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.clicker:active {
+	transform: translateY(5%);
+}
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/37391d0425.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet">
+	<title>UI Challange</title>
+</head>
+<body>
+<main id="app">
+	<header id="header">
+		<div class="menu">
+			<button>
+				<i class="fa-solid fa-bars"></i>
+			</button>
+		</div>
+		<a href="/" class="logo clicker"></a>
+		<div class="user">
+			<button>
+				<i class="fa-regular fa-user"></i>
+			</button>
+		</div>
+	</header>
+	<section id="posts"></section>
+	<section id="upload">
+		<button id="show_input" class="clicker"><i class="fa-solid fa-plus"></i></button>
+	</section>
+	<section id="input">
+		<button class="closer" id="closer">
+			<i class="fa-solid fa-xmark"></i>
+		</button>
+		<form id="form">
+			<div class="form_block">
+				<h2 class="strong">What’s on your mind?</h2>
+				<textarea name="user_text" id="user_text" rows="5" maxlength="400"></textarea>
+			</div>
+			<div class="form_block">
+				<h2 class="strong">Upload an image</h2>
+				<div class="input_file_wrap">
+					<label for="user_file" id="file_label">Upload an image</label>
+					<input id="user_file" type="file" name="user_file">
+					<button id="delete_file" type="button"><i class="fa-regular fa-trash-can"></i></button>
+				</div>
+			</div>
+			<button type="submit" id="publish_btn" class="clicker" disabled>Publish</button>
+		</form>
+	</section>
+	<div class="overlay"></div>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
