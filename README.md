@@ -1,5 +1,13 @@
 # Simple Image Gallery
 
+### Features
+
+- can add image and description
+- display date posted
+- can add multiple posts
+- can like\dislike each posts
+- no backend whatsoever
+
 ### Built with
 
 - HTML
