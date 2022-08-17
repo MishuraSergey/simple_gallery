@@ -5,7 +5,7 @@
 - can add image and description
 - display date posted
 - can add multiple posts
-- can like\dislike each posts
+- can like\dislike each post
 - no backend whatsoever
 
 ### Built with
